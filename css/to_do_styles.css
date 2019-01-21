@@ -1,0 +1,159 @@
+@import  url(https://fonts.googleapis.com/css?family=Montserrat);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+html {
+    font: normal 16px sans-serif;
+    color: #555;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 100px 0;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column; 
+    margin: 0 auto;
+    margin-top: 20px;
+    font-family: Montserrat;
+}
+
+#calendar {
+    margin: 0 auto;
+    margin-top: 20px;
+} 
+
+.newTaskDiv {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+}
+
+#newTaskField {
+    display: block;
+    height: 40px;
+    width: 500px;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    padding: 10px 10px 10px 135px;
+    transition: all 0.1s ease-out;
+    font-size: 12pt;
+}
+
+#newTaskField + label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 40px;
+    line-height: 40px;
+    color: white;
+    border-radius: 7px 0 0 7px;
+    padding: 0 20px;
+    background: #41ade0;
+    transform: translateZ(0) translateX(0);
+    transition: all 0.3s ease-in;
+    
+}
+
+#newTaskField:focus {
+   outline: none;
+   box-shadow: 0 0 3pt 2pt green;
+}
+
+#newTaskField:focus + label{
+    transform: 
+        translateX(260%);
+    border-radius: 0px 7px 7px 0px;
+    transition: all 0.3s ease-out;
+    transition-delay: 0.2s;
+    opacity: 0;
+}
+
+#addItemBtn {
+    position: relative;
+    top: 0;
+    left: 20px;
+    bottom: 0;
+    height: 40px;
+    line-height: 40px;
+    background: teal;
+    color: white;
+    border-radius: 5px;
+    padding: 0px 20px;
+  
+    /* -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out; */
+    display: none;
+}
+
+#incomplete-task-list {
+    margin: 0 auto;
+    margin-top: 30px;
+    
+}
+
+ul {
+    margin: 0 auto;
+    margin-top: 20px;
+    list-style-type: none;
+}
+
+ul li {
+    border: solid gray;
+    border-radius: 7px;
+    width: 500px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+
+
+
+/* :focus::-webkit-input-placeholder {
+    transform: 
+    translateX(-35%);
+  transition: all 0.1s ease-out;
+  
+} */
+
+
+
+/* Place Holder CSS for Focus */
+/* :focus::-webkit-input-placeholder {
+  opacity: 0;
+  transform: translate(70%);
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+:focus:-moz-placeholder {
+  opacity: 0;
+  -moz-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+:focus::-moz-placeholder {
+  opacity: 0;
+  -moz-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+:focus:-ms-input-placeholder {  
+  opacity: 0;
+  -ms-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+} */
