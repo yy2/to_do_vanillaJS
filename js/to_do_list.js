@@ -11,6 +11,7 @@ var addBtn = $('#addItemBtn');
 
 taskFd.on('focus', function(){
     taskFd.css('padding', '10px');
+    console.log("width: " + taskFd.width());
 }) 
 
 taskFd.on('keyup', function() {
@@ -20,10 +21,12 @@ taskFd.on('keyup', function() {
   //taskFd.css('padding', '10px');
   if(!taskFd.val()) {
     addBtn.hide();
+    console.log("width: " + taskFd.width());
     console.log("add is hidden");
   }
   else {
     addBtn.show();
+    console.log("width: " + taskFd.width());
     console.log("add is showing");
   }
 })
@@ -37,6 +40,7 @@ taskFd.on('blur', function() {
   if(taskFd.val().length == 0) {
     taskLabel.show();
     addBtn.hide();
+    addBtn.css('display', 'none');
     taskFd.css('padding', '10px 10px 10px 135px');
   }
     else {
@@ -52,8 +56,18 @@ addBtn.on('click', function(){
   var inputVal = taskFd.val();
   console.log(inputVal);
   var t = document.createTextNode(inputVal);
+  var checkBtn = document.createElement("BUTTON");
+  var deleteBtn = document.createElement("BUTTON");
+  var checkText = document.createTextNode("Check");
+  var deleteText = document.createTextNode("X");
+  checkBtn.className = "checkBtn";
+  deleteBtn.className = "deleteBtn";
+  checkBtn.appendChild(checkText);
+  deleteBtn.appendChild(deleteText);
   console.log("t: " + t);
   li.appendChild(t);
+  li.appendChild(checkBtn);
+  li.appendChild(deleteBtn);
   ul.appendChild(li);
   //clear out input
   taskFd.val('');

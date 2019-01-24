@@ -21,7 +21,7 @@ header {
 .main-container {
     display: flex;
     flex-direction: column; 
-    margin: 0 auto;
+    justify-content: center;
     margin-top: 20px;
     font-family: Montserrat;
 }
@@ -31,12 +31,13 @@ header {
     margin-top: 20px;
 } 
 
-.newTaskDiv {
+#newTaskDiv {
     display: flex;
     flex-direction: row;
     margin: 0 auto;
     margin-top: 20px;
     position: relative;
+    text-align: center;
 }
 
 #newTaskField {
@@ -63,8 +64,7 @@ header {
     padding: 0 20px;
     background: #41ade0;
     transform: translateZ(0) translateX(0);
-    transition: all 0.3s ease-in;
-    
+    transition: all 0.3s ease-in;   
 }
 
 #newTaskField:focus {
@@ -103,7 +103,9 @@ header {
 #incomplete-task-list {
     margin: 0 auto;
     margin-top: 30px;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 ul {
@@ -113,16 +115,36 @@ ul {
 }
 
 ul li {
-    border: solid gray;
+    margin: 10px;
+    background: #b8cfd1;
     border-radius: 7px;
     width: 500px;
     padding: 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
 }
 
 
+/* ul li:hover + .deleteBtn, .deleteBtn:hover{
+    display: inline-block;
+    
+} */
+
+
+.deleteBtn {
+    position: relative;
+    border-radius: 7px;
+    height: 50px;
+    width: 60px;
+}
+
+.checkBtn {
+    position: relative;
+    border-radius: 7px;
+    height: 50px;
+    width: 60px;
+}
 
 
 
