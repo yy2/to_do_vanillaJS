@@ -64,16 +64,16 @@ addBtn.on('click', function(){
   var checkText = document.createTextNode("Check");
   var deleteText = document.createTextNode("X");
   var editText = document.createTextNode("Edit");
-  var newInput = document.createElement('INPUT');
-  var inputText = document.createTextNode("placeholder");
+  var newInput = document.createElement("INPUT");
+  var inputText = document.createTextNode("");
   newInput.className = "newInput";
   span.className = "taskItem";
   checkBtn.className = "checkBtn";
   deleteBtn.className = "deleteBtn";
   editBtn.className = "editBtn";
-  span.appendChild(newInput);
+  //span.appendChild(newInput);
   newInput.appendChild(inputText);
-  //newInput.hide();
+  newInput.style.display = "none";
   span.appendChild(text);
   checkBtn.appendChild(checkText);
   deleteBtn.appendChild(deleteText);
@@ -83,6 +83,7 @@ addBtn.on('click', function(){
   li.appendChild(deleteBtn);
   li.appendChild(editBtn);
   li.appendChild(checkBtn);
+  li.appendChild(newInput);
   //clear out input
   taskFd.val('');
   
@@ -107,20 +108,17 @@ $(document).on("click", '.checkBtn', function() {
 
 $(document).on("click", '.editBtn', function() {
     if ($(this).closest("li").find("span").is(':visible')) {
-        console.log("inside if");
-        var val = $(this).closest("li").find("span").html();
+        var val = $(this).closest("li").find("span").text();
         $(this).closest("li").find("span").hide();
         $(this).closest("li").find("input").show();
-        console.log("span value: " + val);
         $(this).closest("li").find("input").val(val);
-        console.log("input value: " + $(this).closest("li").find("input").val(val));
         $(this).html("Save");
       } else {
-        console.log("else");
-        var val = $(this).closest("li").find("#newInput").val();
-        $(this).closest("li").find("#newInput").hide();
+        var val = $(this).closest("li").find("input").val();
+        console.log(val);
+        $(this).closest("li").find("input").hide();
+        $(this).closest("li").find("span").text(val);
         $(this).closest("li").find("span").show();
-        $(this).closest("li").find("span").html(val);
         $(this).html("Edit");
       }
 });
