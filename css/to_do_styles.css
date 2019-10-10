@@ -104,26 +104,24 @@ header {
     margin: 0 auto;
     margin-top: 30px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 ul {
     margin: 0 auto;
     margin-top: 20px;
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
 }
 
-ul li {
+li {
     margin: 10px;
     background: #b8cfd1;
     border-radius: 7px;
     width: 500px;
     padding: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
 }
+
 
 
 /* ul li:hover + .deleteBtn, .deleteBtn:hover{
@@ -132,18 +130,41 @@ ul li {
 } */
 
 
+.taskItem {
+    padding-right: 40px;
+}
+
 .deleteBtn {
     position: relative;
     border-radius: 7px;
-    height: 50px;
+    height: 40px;
     width: 60px;
+    margin-top: 15px;
+    float: right;
+    margin-left: 20px;
 }
 
 .checkBtn {
     position: relative;
     border-radius: 7px;
-    height: 50px;
+    height: 40px;
     width: 60px;
+    margin-top: 15px;
+    float: right;
+}
+
+.editBtn {
+    position: relative;
+    border-radius: 7px;
+    height: 40px;
+    width: 60px;
+    margin-top: 15px;
+    float: right;
+    margin-left: 20px;
+}
+
+.striked {
+    text-decoration: line-through;
 }
 
 
